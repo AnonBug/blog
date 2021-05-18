@@ -30,6 +30,7 @@ for (let [i, dir] of dirs.entries()) {
 const config = {
     title: '',
     // description: '记录学习，生活',
+    base:'/blog/', // github 中的仓库名称
     head:[
         ['link', { rel: 'icon', href: '/ico.ico' }],
         ['meta', { name: 'theme-color', content: '#3eaf7c' }],
