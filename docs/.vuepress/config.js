@@ -30,10 +30,16 @@ for (let [i, dir] of dirs.entries()) {
 const config = {
     title: '',
     // description: '记录学习，生活',
-    base:'/blog/', // github 中的仓库名称
-    head:[
-        ['link', { rel: 'icon', href: '/ico.ico' }],
-        ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    base: '/blog/', // github 中的仓库名称
+    head: [
+        ['link', {
+            rel: 'icon',
+            href: '/ico.ico'
+        }],
+        ['meta', {
+            name: 'theme-color',
+            content: '#3eaf7c'
+        }],
     ],
     themeConfig: {
         logo: "/logo.png",
@@ -41,7 +47,7 @@ const config = {
         lastUpdated: '最后更新时间',
         smoothScroll: true,
         nav: [{
-                text: 'tec',
+                text: 'tech',
                 link: '/'
             },
             {
@@ -62,7 +68,10 @@ const config = {
         '@vuepress/medium-zoom', // 查看大图插件
         '@vuepress/nprogress', // 进度条插件
         '@vuepress/back-to-top', // 返回到顶部
-    ]
+    ],
+    markdown: {
+        lineNumbers: true, // 显示行号
+    }
 
 }
 
