@@ -1,6 +1,10 @@
 class MinPQ {
-    constructor(n = 0) {
-        this.pq = new Array(n + 1)
+    // 传入比较函数
+    constructor(compareFn) {
+        // 使用数组模拟二叉树结构，通过索引寻找父子节点
+        // 这里使用一个元素占位，是为了方便计算根节点的子节点 2 * k
+        this.pq = [null]
+        if (compareFn) this.compareFn = compareFn
     }
 
     // 插入元素
@@ -60,6 +64,10 @@ class MinPQ {
     }
 
     _big(i, j) {
+        // 如果有自定义比较函数，则使用自定义函数
+        if (this.compareFn) {
+            return this.compareFn(this.pq[i], this.pq[j])
+        }
         return this.pq[i] > this.pq[j]
     }
 

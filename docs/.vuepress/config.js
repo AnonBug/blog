@@ -68,9 +68,19 @@ const config = {
         '@vuepress/medium-zoom', // 查看大图插件
         '@vuepress/nprogress', // 进度条插件
         '@vuepress/back-to-top', // 返回到顶部
+        'vuepress-plugin-serve', // 本地静态服务器（测试build 结果）
+        'vuepress-plugin-table-of-contents', // 目录组件
     ],
     markdown: {
         lineNumbers: true, // 显示行号
+        toc: { // 目录
+            format(content, md){
+                return md.renderInline(content)
+            },
+            listType:'ol',
+            containerHeaderHtml:'<div class="toc-container-header">目录</div>',
+            containerFooterHtml:'<div class="toc-container-footer">Footer</div>',
+        },
     }
 
 }
