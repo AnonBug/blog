@@ -74,12 +74,7 @@ const config = {
     markdown: {
         lineNumbers: true, // 显示行号
         toc: { // 目录
-            format(content, md){
-                return md.renderInline(content)
-            },
-            listType:'ol',
-            containerHeaderHtml:'<div class="toc-container-header">目录</div>',
-            containerFooterHtml:'<div class="toc-container-footer">Footer</div>',
+            // containerHeaderHtml:'<div class="toc-container-header">目录</div>',
         },
     }
 
