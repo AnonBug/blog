@@ -5,7 +5,7 @@ const commitMsg = process.argv[2]
 const cmds = [
     'git add .', `git commit -m ${commitMsg}`, 'git push github main',
     'cd docs/.vuepress/dist',
-    'git init', 'git add -A', `git commit ${commitMsg}`,
+    'git init', 'git add -A', `git commit -m ${commitMsg}`,
     'git push -f git@github.com:AnonBug/blog.git master:gh-pages',
     'cd -'
 ]
