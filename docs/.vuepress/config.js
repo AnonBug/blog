@@ -8,41 +8,19 @@
 const fs = require('fs')
 const path = require('path')
 
+const {getSidebar, generatorMd} = require('./utils/prehandle')
+
+
 // 根据配置，动态设置左侧导航栏
 
 const dirsGroup = {
     "tech": ['语言基础', '数据结构与算法', '计算机基础', '手撕代码', '类库'],
-    "loaf": ['无聊图']
+    "loaf": ['无聊图', '凡人优评']
 }
 
-const sidebar = {}
+generatorMd(dirsGroup.loaf)
 
-for (let [key, dirs] of Object.entries(dirsGroup)) {
-    const childbar = dirs.map(item => ({
-        title: item,
-        children: []
-    }))
-    for (let [i, dir] of dirs.entries()) {
-        let files = fs.readdirSync(path.join(__dirname, `../${key}/${dir}`))
-
-        if (dir === '无聊图') {
-            childbar[i].sidebarDepth = 2
-        }
-        console.log(files);
-        for (let file of files) {
-            if (file.includes('.')) {
-                file = file.match(/(.*)\.md$/)[1]
-                if (file === 'README') {
-                    childbar[i].path = `/${key}/${dir}/`
-                } else {
-                    childbar[i].children.push(`/${key}/${dir}/${file}`)
-                }
-            }
-        }
-    }
-
-    sidebar[`/${key}/`] = childbar
-}
+const sidebar = getSidebar(dirsGroup)
 
 console.log(sidebar);
 

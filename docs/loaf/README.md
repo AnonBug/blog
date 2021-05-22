@@ -4,3 +4,4 @@
 
 ![](./imgs/loaf-bear.gif)
 
+![](./imgs/三点了，饮茶啦.gif)
