@@ -1,10 +1,10 @@
-var exec = require('child_process').exec;
+var child_process = require('child_process');
 
 const commitMsg = process.argv[2]
 
 const cmds = [
     'git add .', `git commit -m ${commitMsg}`, 'git push github main',
-    'cd docs/.vuepress/dist',
+    // 'cd ./codes',
     // 'git init', 'git add -A', `git commit -m ${commitMsg}`,
     // 'git push -f git@github.com:AnonBug/blog.git master:gh-pages',
     // 'cd -'
@@ -20,16 +20,14 @@ const execAsync = cmd => {
     })
 }
 
-(async () => {
-    try {
-        for (let cmd of cmds) {
-            console.log(cmd);
-            await execAsync(cmd)
-        }
-    } catch (e) {
-        console.log(e);
+try {
+    for (let cmd of cmds) {
+        console.log(cmd);
+        child_process.execSync(cmd)
     }
-})()
+} catch (e) {
+    console.log(e);
+}
 
 // exec(ADD, (err) => {
 //     if (err) console.log(err);
