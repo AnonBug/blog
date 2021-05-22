@@ -15,6 +15,7 @@ try {
         console.log(cmd);
         child_process.execSync(cmd)
     }
+    child_process.execFileSync('./deploy.sh')
 } catch (e) {
     console.log(e);
 }
