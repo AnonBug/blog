@@ -34,18 +34,16 @@ const getSidebar = (dirsGroup) => {
 
 // 通过图片生成 md 文档（主要用于无聊图的归档）
 const generatorMd = (dir_names) => {
-    console.log(dir_names);
     for (let dir_name of dir_names) {
         const files = fs.readdirSync(path.join(__dirname, `../../loaf/${dir_name}`))
-        console.log(files);
         // 获取文件夹
         for (let file of files) {
             if (!file.includes('.') && file !== 'imgs') {
                 const dir = path.join(__dirname, `../../loaf/${dir_name}/${file}`)
                 const pics = fs.readdirSync(dir)
                 console.log(pics);
-
-                let content = `# ${file} \n\n`
+                let content = `---\npageClass: loaf-page\n---\n\n`
+                content += `# ${file} \n\n`
                 for (let pic of pics) {
                     content += `## ${pic.split('.')[0]}\n\n![](./${file}/${pic})\n\n`
                 }
