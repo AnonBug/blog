@@ -5,11 +5,11 @@ set -e
 
 # 提交 docs 的更新
 git add .
-git commit -m '$1'
+git commit -m "$1"
 git push github main
 
 # 生成静态文件
-yarn build
+# yarn build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
@@ -17,14 +17,14 @@ cd docs/.vuepress/dist
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
-git add -A
-git commit -m '$1'
+# git init
+# git add -A
+# git commit -m '$1'
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:AnonBug/blog.git master:gh-pages
+# git push -f git@github.com:AnonBug/blog.git master:gh-pages
 
 cd -
