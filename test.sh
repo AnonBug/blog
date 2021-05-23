@@ -1,3 +1,3 @@
 #!/bin/bash
 # This is our first script.
-echo "$1" > 123
+echo "$1"
