@@ -8,6 +8,8 @@ git add .
 # 通过 双引号下的 $1 可以获取传递的参数，这里传递的是提交信息
 git commit -m "$1"
 git push github main
+# 同步更新到 gitee
+git push gitee main
 
 # 生成静态文件
 yarn build
@@ -27,5 +29,7 @@ git commit -m "$1"
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:AnonBug/blog.git master:gh-pages
+# 同步发布到 gitee 
+git push -f git@gitee.com:anonbug/blog.git master:gh-pages
 
 cd -
