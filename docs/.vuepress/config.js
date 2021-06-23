@@ -15,7 +15,8 @@ const {getSidebar, generatorMd} = require('./utils/prehandle')
 
 const dirsGroup = {
     "tech": ['语言基础', '数据结构与算法', '计算机基础', '手撕代码', '类库'],
-    "loaf": ['无聊图', '凡人优评']
+    "loaf": ['无聊图', '凡人优评'],
+    "life":['实习日记']
 }
 
 generatorMd(dirsGroup.loaf)
@@ -46,6 +47,10 @@ const config = {
         nav: [{
                 text: '技术',
                 link: '/tech/'
+            },
+            {
+                text: '生活',
+                link: '/life/'
             },
             {
                 text: '摸鱼',
