@@ -12,9 +12,8 @@ const {getSidebar, generatorMd} = require('./utils/prehandle')
 
 
 // 根据配置，动态设置左侧导航栏
-
 const dirsGroup = {
-    "tech": ['语言基础', '数据结构与算法', '计算机基础', '手撕代码', '类库'],
+    "tech": ['语言基础', '数据结构与算法','计算机网络', '手撕代码', '类库'],
     "loaf": ['无聊图', '凡人优评'],
     "life":['实习日记']
 }
