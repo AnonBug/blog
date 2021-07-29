@@ -8,19 +8,37 @@
 const fs = require("fs");
 const path = require("path");
 
-const { getSidebar, generatorMd } = require("./utils/prehandle");
+const { getSidebar, getSidebarWithoutNest } = require("./utils/prehandle");
 
 // 根据配置，动态设置左侧导航栏
 const dirsGroup = {
-  tech: ["语言基础", "数据结构与算法", "计算机网络", "手撕代码", "类库"],
+  // tech: ["语言基础", "数据结构与算法", "计算机网络", "手撕代码", "类库"],
   life: ["实习日记"],
 };
 
+const menu = {
+  language: '语言基础',
+  network: '计算机网络',
+  algo: '算法',
+  codes: '寿司代码',
+  libs: '类库',
+}
+
+const navs = []
+for (let [link, text] of Object.entries(menu)) {
+  navs.push({ text, link: `/${link}/` })
+}
+
+
 // generatorMd(dirsGroup.loaf);
 
-const sidebar = getSidebar(dirsGroup);
+// 带嵌套的侧边栏：life/实习日记/xx.md
+const sidebar1 = getSidebar(dirsGroup);
 
-console.log(sidebar);
+// 不带嵌套的侧边栏：algo/xx.md
+const sidebar2 = getSidebarWithoutNest(menu)
+
+console.log(sidebar2);
 
 const config = {
   title: "",
@@ -44,14 +62,14 @@ const config = {
   ],
   themeConfig: {
     logo: "/logo.png",
-    sidebar,
+    sidebar: {
+      ...sidebar1, 
+      ...sidebar2,
+    },
     lastUpdated: "最后更新时间",
     smoothScroll: true,
     nav: [
-      {
-        text: "技术",
-        link: "/tech/",
-      },
+      ...navs,
       {
         text: "生活",
         link: "/life/",

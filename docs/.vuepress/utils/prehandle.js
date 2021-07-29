@@ -32,6 +32,32 @@ const getSidebar = (dirsGroup) => {
     return sidebar
 }
 
+// 不带嵌套文件夹的侧边栏
+const getSidebarWithoutNest = (menu) => {
+    const sidebar = {}
+    for (let dir of Object.keys(menu)) {
+        // // 根据文件夹内容生成链接
+        const children = []
+        let files = fs.readdirSync(path.join(__dirname, `../../${dir}`))
+
+        for (let file of files) {
+            if (file.includes('.')) {
+                file = file.match(/(.*)\.md$/)[1]
+                if (file === 'README') {
+                    children.unshift('')
+                } else {
+                    children.push(`/${dir}/${file}`)
+                }
+            }
+        }
+
+        // 为不同路由定义不同的 sidebar
+        sidebar[`/${dir}/`] = children
+    }
+
+    return sidebar
+}
+
 // 通过图片生成 md 文档（主要用于无聊图的归档）
 const generatorMd = (dir_names) => {
     for (let dir_name of dir_names) {
@@ -56,5 +82,6 @@ const generatorMd = (dir_names) => {
 
 module.exports = {
     getSidebar,
-    generatorMd
+    generatorMd,
+    getSidebarWithoutNest,
 }
