@@ -39,6 +39,9 @@ const getSidebarWithoutNest = (menu) => {
         // // 根据文件夹内容生成链接
         const children = []
         let files = fs.readdirSync(path.join(__dirname, `../../${dir}`))
+        files.sort((a, b) => {
+            
+        })
 
         for (let file of files) {
             if (file.includes('.')) {
