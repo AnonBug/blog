@@ -36,9 +36,9 @@ for (let [link, text] of Object.entries(menu)) {
 const sidebar1 = getSidebar(dirsGroup);
 
 // 不带嵌套的侧边栏：algo/xx.md
-const sidebar2 = getSidebarWithoutNest(menu)
+// const sidebar2 = getSidebarWithoutNest(menu)
 
-console.log(sidebar2);
+// console.log(sidebar2);
 
 const config = {
   title: "",
@@ -62,27 +62,29 @@ const config = {
   ],
   themeConfig: {
     logo: "/logo.png",
-    sidebar: {
-      ...sidebar1, 
-      ...sidebar2,
-    },
+    // sidebar: {
+    //   ...sidebar1, 
+    //   // ...sidebar2,
+    //   // '/network/5.网络安全'
+    // },
+    sidebar: 'auto',
     lastUpdated: "最后更新时间",
     smoothScroll: true,
     nav: [
       ...navs,
       {
-        text: "生活",
+        text: "实习生活",
         link: "/life/",
       },
       {
         text: "more",
         items: [
           {
-            text: "Github",
-            link: "https://github.com/AnonBug",
+            text: "仓库地址",
+            link: "https://github.com/AnonBug/blog",
           },
           {
-            text: "摸鱼",
+            text: "摸鱼实录",
             link: "https://anonbug.github.io/jandan",
           },
           {
