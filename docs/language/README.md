@@ -22,6 +22,7 @@ sidebar: false
 
 ## 浏览器
 - [深入了解现代浏览器](/language/11.浏览器.md)
+- [BOM 相关](/language/12.BOM.md)
 ## 工程化
 - [模块化](/language/5.模块化.md)
 - [前端优化](/language/6.前端优化.md)
