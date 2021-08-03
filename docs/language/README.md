@@ -26,7 +26,11 @@ sidebar: false
 ## 工程化
 - [模块化](/language/5.模块化.md)
 - [前端优化](/language/6.前端优化.md)
+- [项目管理相关](/language/13.项目管理.md)
 
 ## 前端趋势
 - [WebAssembly](/language/10.前端趋势.md)
 
+## 前端成长
+
+> [前端如何服务业务](https://zhuanlan.zhihu.com/p/62722892)
