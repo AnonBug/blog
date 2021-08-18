@@ -1,4 +1,4 @@
 /node_modules
 .vscode
 /docs/.vuepress/dist
-./deploy.sh
+deploy.sh
