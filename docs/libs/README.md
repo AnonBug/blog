@@ -17,3 +17,8 @@ sidebar: false
 - [git 笔记](/libs/6.git.md)
 - [npm 笔记](/libs/4.npm.md)
 - [webpack 笔记](/libs/3.webpack.md)
+
+## 源码阅读
+
+- [如何阅读源码](https://mp.weixin.qq.com/s/xp7YhhzbhMC7d-FQkIU3BQ)
+- [看看别人阅读源码是如何产出的](https://www.processon.com/view/link/5f6d2beff346fb166d0ac4fd#map)
