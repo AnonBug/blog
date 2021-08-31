@@ -31,6 +31,10 @@ sidebar: false
 #### [手撕代码](/codes/)
 
 一些前端相关的非算法题，如手写 Promise、手写 apply 实现等。
+
+#### 一些好玩又涨技能的前端项目
+
+> [推荐26个GitHub上好玩又有挑战的前端项目（涵盖初中高阶）](https://juejin.cn/post/6999918705639424014)
 ### 联系我
 
 - [GitHub](https://github.com/AnonBug)

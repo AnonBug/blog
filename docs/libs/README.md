@@ -17,6 +17,7 @@ sidebar: false
 - [git 笔记](/libs/6.git.md)
 - [npm 笔记](/libs/4.npm.md)
 - [webpack 笔记](/libs/3.webpack.md)
+- [工程化相关面试题](/libs/0.engineering.md)
 
 ## 源码阅读
 

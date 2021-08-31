@@ -23,9 +23,9 @@ sidebar: false
 ## 浏览器
 - [深入了解现代浏览器](/language/11.浏览器.md)
 - [BOM 相关](/language/12.BOM.md)
+- [移动端相关面试题](/language/16.移动端面试题.md)
 
 ## 可视化
-
 
 - [可视化时如何选择这三种技术svg、canvas、webgl](https://www.yworks.com/blog/svg-canvas-webgl)
 
@@ -36,6 +36,8 @@ sidebar: false
 - [实战技巧](/language/4.实战技巧.md)
 
 ## 前端趋势
+- [移动前端开发和 Web 前端开发的区别是什么？](https://juejin.cn/post/6844904183892541453)
+  - 顺便介绍了前端的发展历史，值得阅读
 - [TypeScript](/language/1.ts基础.md)
 - [WebAssembly](/language/10.前端趋势.md)
 - [云 + 端](/language/15.FaaS.md)
