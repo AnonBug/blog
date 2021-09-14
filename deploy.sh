@@ -9,7 +9,7 @@ git add .
 git commit -m "$1"
 git push origin main
 # 同步更新到 gitee
-# git push gitee main
+git push gitee main
 
 # 生成静态文件
 yarn build
@@ -30,6 +30,6 @@ git commit -m "$1"
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f https://github.com/AnonBug/blog.git master:gh-pages
 # 同步发布到 gitee 
-# git push -f git@gitee.com:anonbug/blog.git master:gh-pages
+git push -f git@gitee.com:anonbug/blog.git master:gh-pages
 
 cd -
