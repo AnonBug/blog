@@ -13,7 +13,7 @@ const { getSidebar, getSidebarWithoutNest } = require("./utils/prehandle");
 // 根据配置，动态设置左侧导航栏
 const dirsGroup = {
   // tech: ["语言基础", "数据结构与算法", "计算机网络", "手撕代码", "类库"],
-  life: ["实习日记"],
+  // life: ["实习日记"],
 };
 
 const menu = {
@@ -72,10 +72,10 @@ const config = {
     smoothScroll: true,
     nav: [
       ...navs,
-      {
-        text: "实习生活",
-        link: "/life/",
-      },
+      // {
+      //   text: "实习生活",
+      //   link: "/life/",
+      // },
       {
         text: "more",
         items: [

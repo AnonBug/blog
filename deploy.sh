@@ -28,7 +28,8 @@ git commit -m "$1"
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/AnonBug/blog.git master:gh-pages
+git push -f git@github.com:AnonBug/blog.git master:gh-pages
+
 # 同步发布到 gitee 
 git push -f git@gitee.com:anonbug/blog.git master:gh-pages
 
