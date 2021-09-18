@@ -8,7 +8,7 @@
 
 ## 1. 基础类型
 
-### never
+### 1.1 never
 
 never 类型表示的是那些永不存在的值的类型，可以利用 never 类型的特性来实现全面性检查。
 
@@ -33,7 +33,7 @@ function controlFlowAnalysisWithNever(foo: Foo) {
 
 ## 2. 高阶类型
 
-### 联合类型
+### 2.1 联合类型
 
 通过 `|` 运算符可以将现有的多种类型联合到一起成为一种类型，其示例包含了所有类型中的某一项。
 
@@ -55,7 +55,7 @@ type EventName = 'click' | 'scroll' | 'mousemove';
 let event: EventName = 'scroll';
 ```
 
-### 交叉类型
+### 2.2 交叉类型
 
 通过 `&` 运算符可以将现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性。
 
@@ -78,7 +78,7 @@ let point: Point = {
 
 如果同名属性都是非基础数据类型，则该属性也会自动进行交叉合并。
 
-### 使用接口定义类型
+### 2.3 使用接口定义类型
 
 在面向对象语言中，**接口是对行为的抽象，而具体行动需要由类去实现**。
 
@@ -98,7 +98,7 @@ interface Person {
 }
 ```
 
-### 使用别名定义类型
+### 2.4 使用别名定义类型
 
 类型别名用来给一个类型起个新名字。也可以用来定义对象的形状。
 
@@ -112,7 +112,7 @@ type Person = {
 }
 ```
 
-### type 与 interface 的区别
+### 2.5 type 与 interface 的区别
 
 1. 接口可以定义多次，会被自动合并为单个接口
 
@@ -156,7 +156,7 @@ type Data = [number, string];
 
 ## 3. 函数
 
-### 函数重载
+### 3.1 函数重载
 
 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。
 
@@ -196,7 +196,7 @@ function reverse(x: number | string): number | string | void {
 ## 4. 更多特性
 
 
-### 类
+### 4.1 类
 
 ```ts
 class Greeter {
@@ -255,7 +255,7 @@ class Greeter {
 let greeter = new Greeter("world");
 ```
 
-### 断言
+### 4.2 断言
 
 TypeScript 中有类型断言、非空断言、确定赋值断言。
 
@@ -277,7 +277,7 @@ function myFunc(maybeString: string | undefined | null) {
 console.log(maybeString?.length);
 ```
 
-### 类型守卫
+### 4.3 类型守卫
 
 类型守卫是在变量类型不明确时，需要执行一些明确针对某些类型的操作时，通过某些运行时语句判断变量类型。这种判断主要思想有检测属性、原型、数据类型等。
 
@@ -298,19 +298,19 @@ function padLeft(value: string, padding: string | number) {
 }
 ```
 
-### 声明文件
+### 4.4 声明文件
 > [声明文件 —— TypeScript 入门教程](https://ts.xcatliu.com/basics/declaration-files.html)
 
 声明文件是对所提供库函数的解释说明，通过它，ts 编译器才能可以实现对代码的补全、提示功能。
 
-### 泛型
+### 4.5 泛型
 
 泛型（Generics）是允许同一个函数接受不同类型参数的一种模板。相比于使用 any 类型，使用泛型来创建可复用的组件要更好，因为泛型会保留参数类型。
 
-### 装饰器
+### 4.6 装饰器
 
 
-### 关于 __esModule
+### 4.7 关于 __esModule
 > [stackflow 中的解释](https://stackoverflow.com/questions/50943704/whats-the-purpose-of-object-definepropertyexports-esmodule-value-0)
 > [__esModule 的作用](https://toyobayashi.github.io/2020/06/29/ESModule/)
 
@@ -329,9 +329,9 @@ import cm from 'commonjs-module';
 ```
 
 ## 5. 工程化
-### tsconfig.json
+### 5.1 tsconfig.json
 
-### 工具集
+### 5.2 工具集
 
 > [TypeScript Playground](https://www.typescriptlang.org/play/)
 
