@@ -17,6 +17,5 @@ let removeNthFromEnd = (head, n) => {
   if (slow === head) return head.next;
 
   pre.next = slow.next;
-
   return head;
 }
