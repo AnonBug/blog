@@ -36,13 +36,13 @@ Function.prototype.myCall = function (context, ...args) {
 /* 
     myApply 与 myCall 写法基本相同，唯一不同在传参差异
 */
-Function.prototype.myApply = function (context, ...args) {
+Function.prototype.myApply = function (context, args) {
     if (typeof context === 'undefined' || context === null) {
         context = window
     }
     const fnSymbol = Symbol()
     context[fnSymbol] = this
-    const res = context[fnSymbol](args)
+    const res = context[fnSymbol](...args)
     delete context[fnSymbol]
     return res
 }
@@ -71,4 +71,3 @@ let zs = {
 }
 let res = zyc.sayName.myBind(zs)
 console.log(res());
-

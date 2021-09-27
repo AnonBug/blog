@@ -1,3 +1,4 @@
+// #region algo
 class MinPQ {
     // 传入比较函数
     constructor(compareFn) {
@@ -81,3 +82,4 @@ class MinPQ {
         return Math.floor(k / 2)
     }
 }
+// #endregion algo

@@ -8,8 +8,7 @@ sidebar: false
 - **数据结构**
   - [OI Wiki](https://oi-wiki.org/ds/)
   - [简单数据结构（栈、队列、链表）](/algo/简单结构.md)
-  - [二叉树](/algo/4.二叉树.md)
-  - [堆](/algo/最小堆.md)
+  - [二叉树](/algo/二叉树.md)
   - [并查集](/algo/并查集.md)
   - [图](/algo/图.md)
   - [线段树](/algo/线段树.md)

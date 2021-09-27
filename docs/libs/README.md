@@ -15,6 +15,7 @@ sidebar: false
   - [git 笔记](/libs/6.git.md)
   - [npm 笔记](/libs/4.npm.md)
   - [webpack 笔记](/libs/3.webpack.md)
+  - [webpack入门](/libs/webpack入门.md)
   - [工程化相关面试题](/libs/0.engineering.md)
 - 源码阅读
   - [如何阅读源码](https://mp.weixin.qq.com/s/xp7YhhzbhMC7d-FQkIU3BQ)
