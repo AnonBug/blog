@@ -113,37 +113,7 @@ git push origin master
 
 
 ## 3. 进阶操纵
-### 3.1 将本地代码连接到远程仓库
-首先，初始化 `本地仓库` ，并将文件更新进去：
-```sh
-# 在本地代码文件夹中
-git init
-git add .
-git commit -m "提交信息"
-```
 
-然后，为本地仓库添加远程地址：
-
-```sh
-git remote add origin git@gitee.com:anonbug/****.git
-```
-
-如果远程仓库为空，可以直接 `push` ：
-```sh
-git push origin master
-```
-
-如果远程仓库已有其他数据，需要先 pull 下来。因为此时的本地仓库刚初始化，常规 pull 操作会报错 `fatal: refusing to merge unrelated histories` 。需要额外添加一个 `--allow-unrelated-histories` 命令：
-```sh
-git pull origin master --allow-unrelated-histories
-```
-
-`pull` 之后会跳出 `vim编辑器` 让你写一些说明文字，可以直接使用以下命令退出(冒号也要输入)：
-```sh
-:wq
-```
-
-然后再执行 `push` 命令就可以了。
 ### 3.2 idea 中使用 git
 
 ## 附 其它小技巧

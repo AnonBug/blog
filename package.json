@@ -20,5 +20,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "serve": "vuepress serve docs --open"
+  },
+  "dependencies": {
+    "markdown-it-katex": "^2.0.3"
   }
 }

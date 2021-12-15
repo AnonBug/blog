@@ -77,6 +77,10 @@ const config = {
       //   link: "/life/",
       // },
       {
+        text: "深度学习",
+        link: "/study/",
+      },
+      {
         text: "more",
         items: [
           {
@@ -111,6 +115,7 @@ const config = {
     extendMarkdown: (md) => {
       // 图片中文路径问题 https://segmentfault.com/a/1190000022275001
       md.use(require("markdown-it-disable-url-encode"));
+      md.use(require("markdown-it-katex"));
     },
   },
 };
