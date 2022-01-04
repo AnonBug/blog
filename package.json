@@ -11,6 +11,7 @@
     "markdown-it-disable-url-encode": "^1.0.1",
     "vuepress": "^1.8.2",
     "vuepress-plugin-global-toc": "^1.1.0",
+    "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-nprogress": "^1.1.8",
     "vuepress-plugin-serve": "^2.0.4",
     "vuepress-plugin-table-of-contents": "^1.1.7",

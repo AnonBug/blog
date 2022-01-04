@@ -1,197 +1,249 @@
-^表示上标，
-_表示下标，
-如果上（下）标内容多于一个字符就需要使用{}，注意不是( ), 因为( )经常是公式本身组成部分，为避免冲突，所以选用了{ } 将其包起来。
+# 在 markdown 中编写公式
 
-示例：$x^{y^z}=(1+e^x)^{-2xy^w}$
+> [Markdown数学公式语法——简书](https://www.jianshu.com/p/e74eb43960a1)
 
-效果：xyz=(1+ex)−2xyw 
-上面输入的上下标都是在字符的右侧，要想在左侧或者两侧都写上下标，那么需要使用\sideset语法。
+## 1. 基本规则
 
-示例：$\sideset {^1_2}{^3_4} \bigotimes $
+### 行内
 
-效果：12⨂34 
+将公式插入到本行内。
 
-3.3 括号和分隔符
+写法：`$xyz$`，效果：$xyz$
 
-( )和[ ]就是自身了，由于{ } 是Tex的元字符，所以表示它自身时需要转义。
+### 独行公式
 
-示例：$f(x,y) = x^2 + y^2, x\epsilon[0,100]$
+将公式插入到新的一行内，并且居中。
 
-效果：f(x,y)=x2+y2,xϵ[0,100] 
-有时候括号需要大号的，普通括号不好看，此时需要使用\left和\right加大括号的大小。
+写法：`$$xyz$$`，效果：
 
-示例：$(\frac{x}{y})^8，\left(\frac{x}{y}\right)^8$
+$$xyz$$
 
-效果：(xy)8，(xy)8 
-\left和\right必须成对出现，对于不显示的一边可以使用 . 代替。
+### 上标、下标与组合
 
-示例：$\left.\frac{{\rm d}u}{{\rm d}x} \right| _{x=0}$
+- 上标符号，符号：^，如：$x^4$
+- 下标符号，符号：_，如：$x_1$
+- 组合符号，符号：{}，如：${16}_{8}O{2+}_{2}$
 
-效果：dudx∣∣x=0 
-3.4 分数
+### 汉字、字体与格式
 
-使用\frac{分子}{分母}格式，或者 分子\over 分母。
+- 汉字形式，符号：`\mbox{}`，如：$V_{\mbox {初始}}$
+- 字体控制，符号：`\displaystyle`，如：$\displaystyle \frac{x+y}{y+z}$
+- 下划线符号，符号：`\underline`，如：$\underline{x+y}$
+- 标签，符号`\tag{数字}`，如：$$x + y \tag{11}$$
+- 上大括号，符号：`\overbrace{算式}`，如：$\overbrace{a+b+c+d}^{2.0}$
+- 下大括号，符号：`\underbrace{算式}`，如：$a+\underbrace{b+c}_{1.0}+d$
+- 上位符号，符号：`\stacrel{上位符号}{基位符号}`，如：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$
 
-示例：$\frac{1}{2x+1}或者1\over{2x+1}$
+### 占位符
 
-效果：12x+1或者12x+1 
-3.5 开方
+- 两个quad空格，符号：`\qquad`，如：$x \qquad y$
+- quad空格，符号：`\quad`，如：$x \quad y$
+- 大空格，符号`\`，如：$x \ y$
+- 中空格，符号`\:`，如：$x \: y$
+- 小空格，符号`\,`，如：$x \, y$
+- 没有空格，符号` `，如：$xy$
+- 紧贴，符号`\!`，如：$x \! y$
 
-示例：$\sqrt[9]{3}和\sqrt{3}$
+### 括号
 
-效果：3‾‾√9 和 3‾‾√ 
-3.6 省略号
+- 括号，符号：`()\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)`，如：$()\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$
+- 中括号，符号：`[]`，如：$[x+y]$
+- 大括号，符号：`\{ \}`，如：$\{x+y\}$
+- 自适应括号，符号：`\left \right`，如：$\left(x\right)$，$\left(x{yz}\right)$
+- 组合公式，符号：`{上位公式 \choose 下位公式}`，如：${n+1 \choose k}={n \choose k}+{n \choose k-1}$
+- 组合公式，符号：`{上位公式 \atop 下位公式}`，如：$\sum_{k_0,k_1,\ldots>0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$
 
-有两种省略号，\ldots 表示语文本底线对其的省略号，\cdots表示与文本中线对其的省略号。
+## 2. 运算符
 
-示例：$f(x_1, x_2, \ldots, x_n)=x_1^2 + x_2^2+ \cdots + x_n^2$
+### 四则运算
 
-效果：f(x1,x2,…,xn)=x21+x22+⋯+x2n 
-3.7 矢量
+- 加法运算，符号：+，如：$x+y=z$
+- 减法运算，符号：-，如：$x-y=z$
+- 加减运算，符号：`\pm`，如：$x \pm y=z$
+- 减甲运算，符号：`\mp`，如：$x \mp y=z$
+- 乘法运算，符号：`\times`，如：$x \times y=z$
+- 点乘运算，符号：`\cdot`，如：$x \cdot y=z$
+- 星乘运算，符号：`\ast`，如：$x \ast y=z$
+- 除法运算，符号：`\div`，如：$x \div y=z$
+- 斜法运算，符号：`/`，如：$x/y=z$
+- 分式表示，符号：`\frac{分子}{分母}`，如：$\frac{x+y}{y+z}$
+- 分式表示，符号：`{分子} \over {分母}`，如：${x+y} \over {y+z}$
+- 绝对值表示，符号：`|x+y|`，如：$|x+y|$
 
-示例：$\vec{a} \cdot \vec{b}=0$
+### 高级运算
 
-效果: a⃗ ⋅b⃗ =0 
-3.8 积分
+- 平均数运算，符号：`\overline{算式}`，如：$\overline{xyz}$
+- 开二次方运算，符号：`\sqrt`，如：$\sqrt x$
+- 开方运算，符号：`\sqrt[开方数]{被开方数}`，如：$\sqrt[3]{x+y}$
+- 对数运算，符号：`\log`，如：$\log(x)$
+- 极限运算，符号：`\lim`，如：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$
+- 极限运算，符号：`\displaystyle \lim`，如：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$
+- 求和运算，符号：`\sum`，如：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$
+- 求和运算，符号：`\displaystyle \sum`，如：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$
+- 积分运算，符号：`\int`，如：$\int^{\infty}_{0}{xdx}$
+- 积分运算，符号：`\displaystyle \int`，如：$\displaystyle \int^{\infty}_{0}{xdx}$
+- 微分运算，符号：`\partial`，如：$\frac{\partial x}{\partial y}$
+- 矩阵表示，符号：`\begin{matrix} \end{matrix}`，如：
 
-示例：$\int_0^1x^2{\rm d}x $
+$$
+\begin{bmatrix} 
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix} 
+$$
 
-效果： ∫10x2dx 
-3.9 极限
+> [使用Markdown写矩阵](https://blog.csdn.net/qq_38228254/article/details/79469727)
 
-示例：$\lim_{n\rightarrow+\infty}\frac{1}{n(n+1)}$
+### 逻辑运算
 
-效果： limn→+∞1n(n+1) 
-3.10 累加、累乘
+- 等于运算，符号：=，如：$x+y=z$
+- 大于运算，符号：>，如：$x+y>z$
+- 小于运算，符号：<，如：$x+y<z$
+- 大于等于运算，符号：\geq，如：$x+y \geq z$
+- 小于等于运算，符号：\leq，如：$x+y \leq z$
+- 不等于运算，符号：\neq，如：$x+y \neq z$
+- 不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$
+- 不大于等于运算，符号：\not\geq，如：$x+y \not\geq z$
+- 不小于等于运算，符号：\nleq，如：$x+y \nleq z$
+- 不小于等于运算，符号：\not\leq，如：$x+y \not\leq z$
+- 约等于运算，符号：\approx，如：$x+y \approx z$
+- 恒定等于运算，符号：\equiv，如：$x+y \equiv z$
 
-示例：$\sum_1^n\frac{1}{x^2}，\prod_{i=0}^n\frac{1}{x^2}$
+### 集合运算
 
-效果：∑n11x2， ∏ni=01x2 
-3.11 希腊字母
+- 属于运算，符号：\in，如：$x \in y$
+- 不属于运算，符号：\notin，如：$x \notin y$
+- 不属于运算，符号：\not\in，如：$x \not\in y$
+- 子集运算，符号：\subset，如：$x \subset y$
+- 子集运算，符号：\supset，如：$x \supset y$
+- 真子集运算，符号：\subseteq，如：$x \subseteq y$
+- 非真子集运算，符号：\subsetneq，如：$x \subsetneq y$
+- 真子集运算，符号：\supseteq，如：$x \supseteq y$
+- 非真子集运算，符号：\supsetneq，如：$x \supsetneq y$
+- 非子集运算，符号：\not\subset，如：$x \not\subset y$
+- 非子集运算，符号：\not\supset，如：$x \not\supset y$
+- 并集运算，符号：\cup，如：$x \cup y$
+- 交集运算，符号：\cap，如：$x \cap y$
+- 差集运算，符号：\setminus，如：$x \setminus y$
+- 同或运算，符号：\bigodot，如：$x \bigodot y$
+- 同与运算，符号：\bigotimes，如：$x \bigotimes y$
+- 实数集合，符号：\mathbb{R}，如：$\mathbb {R}$
+- 自然数集合，符号：\mathbb{Z}，如：$\mathbb{Z}$
+- 空集，符号：\emptyset，如：$\emptyset$
 
-希腊字符示例：$$\alpha　A　\beta　B　\gamma　\Gamma　\delta　\Delta　\epsilon　E \varepsilon　　\zeta　Z　\eta　H　\theta　\Theta　\vartheta \iota　I　\kappa　K　\lambda　\Lambda　\mu　M　\nu　N \xi　\Xi　o　O　\pi　\Pi　\varpi　　\rho　P \varrho　　\sigma　\Sigma　\varsigma　　\tau　T　\upsilon　\Upsilon \phi　\Phi　\varphi　　\chi　X　\psi　\Psi　\omega　\Omega$$
+### 三角运算符
+- `\bot`：$\bot$ 
+- `\angle`：$\angle$ 
+- `\circ`：$30^\circ$ 
+- `\sin`：$\sin$ 
+- `\cos`：$\cos$ 
+- `\tan`：$\tan$ 
+- `\cot`：$\cot$ 
+- `\sec`：$\sec$ 
+- `\csc`：$\csc$
 
-效果：
+### 微积分运算符
+- `\prime`：$\prime$
+- `\int`：$\int$
+- `\iint`：$\iint$
+- `\iiint`：$\iiint$
+- `\iiiint`：$\iiiint$
+- `\oint`：$\oint$
+- `\lim`：$\lim$
+- `\infty`：$\infty$
+- `\nabla`：$\nabla$
 
+### 逻辑运算符
+- `\because `：$\because$
+- `\therefore `：$\therefore$
+- `\forall `：$\forall$
+- `\exists `：$\exists$
+- `\not= `：$\not=$
+- `\not> `：$\not>$
+- `\not\subset`：$\not\subset$
 
-α　A　β　B　γ　Γ　δ　Δ　ϵ　Eε　　ζ　Z　η　H　θ　Θ　ϑι　I　κ　K　λ　Λ　μ　M　ν　Nξ　Ξ　o　O　π　Π　ϖ　　ρ　Pϱ　　σ　Σ　ς　　τ　T　υ　Υϕ　Φ　φ　　χ　X　ψ　Ψ　ω　Ω
+## 3. 特殊符号
 
-3.12 数学符号大汇总
-± ：\pm 
-× ：\times 
-÷：\div 
-∣：\mid
+### 数学符号
 
-⋅：\cdot 
-∘：\circ 
-∗: \ast 
-⨀：\bigodot 
-⨂：\bigotimes 
-⨁：\bigoplus 
-≤：\leq 
-≥：\geq 
-≠：\neq 
-≈：\approx 
-≡：\equiv 
-∑：\sum 
-∏：\prod 
-∐：\coprod
+- 无穷`\infty`：$\infty$
+- 虚数`\imath`：$\imath$
+- 虚数`\jmath`：$\jmath$
 
-集合运算符： 
-∅：\emptyset 
-∈：\in 
-∉：\notin 
-⊂：\subset 
-⊃ ：\supset 
-⊆ ：\subseteq 
-⊇ ：\supseteq 
-⋂ ：\bigcap 
-⋃ ：\bigcup 
-⋁ ：\bigvee 
-⋀ ：\bigwedge 
-⨄ ：\biguplus 
-⨆：\bigsqcup
+### 戴帽符号
 
-对数运算符： 
-log ：\log 
-lg ：\lg 
-ln ：\ln
+- `\hat a`：$\hat a$
+- `\check a`：$\check a$
+- `\breve a`：$\breve a$
+- `\tilde a`：$\tilde a$
+- `\dot a`：$\dot a$
+- `\ddot a`：$\ddot a$
+- `\bar a`：$\bar a$
+- `\vec a`：$\vec a$
+- `\acute a`: $\acute a$
+- `\grave a`: $\grave a$
+- `\mathring a`: $\mathring a$
+- `\overline a`：$\overline a$
+- `\underline a`：$\underline a$
 
-三角运算符： 
-⊥：\bot 
-∠：\angle 
-30∘：30^\circ 
-sin ：\sin 
-cos ：\cos 
-tan ：\tan 
-cot ：\cot 
-sec ：\sec 
-csc ：\csc
+### 省略号
 
-微积分运算符： 
-y′x：\prime 
-∫：\int 
-∬ ：\iint 
-∭ ：\iiint 
-⨌：\iiiint 
-∮ ：\oint 
-lim ：\lim 
-∞ ：\infty 
-∇：\nabla
+- `\ldots`：$1,2,\ldots,n$
+- `\cdots`：$x_1^2 + x_2^2 + \cdots + x_n^2$
+- `\vdots`：$\vdots$
+- `\ddots`：$\ddots$
 
-逻辑运算符： 
-∵：\because 
-∴ ：\therefore 
-∀ ：\forall 
-∃ ：\exists 
-≠ ：\not= 
-≯：\not> 
-⊄：\not\subset
+### 箭头符号
 
-戴帽符号： 
-$\hat y$ 
-$\check y$ 
-$\breve y$
-$\tilde y$
-$\dot y$
-$\ddot y$
-$\vec y$
-$\overline y$
-$\underline y$
+- `\uparrow`：$\uparrow$
+- `\downarrow`：$\downarrow$
+- `\Uparrow`：$\Uparrow$
+- `\Downarrow`：$\Downarrow$
+- `\rightarrow`：$\rightarrow$
+- `\Rightarrow`：$\Rightarrow$
+- `\leftarrow`：$\leftarrow$
+- `\Leftarrow`：$\Leftarrow$
+- `\longrightarrow`：$\longrightarrow$
+- `\Longrightarrow`：$\Longrightarrow$
+- `\longleftarrow`：$\longleftarrow$
+- `\Longleftarrow`：$\Longleftarrow$
 
+### 使用指定字体
 
-连线符号： 
-a+b+c+d⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯：\overline{a+b+c+d} 
-a+b+c+d⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯：\underline{a+b+c+d} 
-a+b+c⏟1.0+d2.0：\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}
+- 罗马字体`{\rm text}`：${\rm text}$
+- 意大利体`{\it text}`：${\it text}$
+- 黑体`{\bf text}`：${\bf text}$
+- 花体`{\cal text}`：${\cal text}$
+- 等线体`{\sf text}`：${\sf text}$
+- 数学斜体`{\mit text}`：${\mit text}$
+- 打印机字体`{\tt text}`：${\tt text}$
 
-箭头符号： 
-↑：\uparrow 
-↓：\downarrow 
-⇑ ：\Uparrow 
-⇓：\Downarrow 
-→：\rightarrow 
-← ：\leftarrow 
-⇒ ：\Rightarrow 
-⇐ ：\Leftarrow 
-⟶ ：\longrightarrow 
-⟵ ：\longleftarrow 
-⟹：\Longrightarrow 
-⟸ ：\Longleftarrow
+## 4. 希腊字母
 
-3.13 需要转义的字符
-
-要输出字符　空格　#　$　%　&　_　{　}　，用命令：　\空格　#　\$　\%　\&　_　{　}
-
-3.14 使用指定字体
-
-{\rm text}如： 
-使用罗马字体：text text 
-其他的字体还有： 
-\rm　　罗马体　　　　　　　\it　　意大利体 
-\bf　　黑体　　　　　　　　\cal 　花体 
-\sl　　倾斜体　　　　　　　\sf　　等线体 
-\mit 　数学斜体　　　　　　\tt　　打字机字体 
-\sc　　小体大写字母
-
-## 
+字母 | 实现 | 字母 | 实现
+---|---|---|---
+A | A | α | `\alhpa`
+B | B | β | `\beta`
+Γ | `\Gamma` | γ | `\gamma`
+Δ | `\Delta` | δ | `\delta`
+E | E | ϵ | `\epsilon`
+Z | Z | ζ | `\zeta`
+H | H | η | `\eta`
+Θ | `\Theta` | θ | `\theta`
+I | I | ι | `\iota`
+K | K | κ | `\kappa`
+Λ | `\Lambda` | λ | `\lambda`
+M | M | μ | `\mu`
+N | N | ν | `\nu`
+Ξ | `\Xi` | ξ | `\xi`
+O | O | ο | `\omicron`
+Π | `\Pi` | π | `\pi`
+P | P | ρ | `\rho`
+Σ | `\Sigma` | σ | `\sigma`
+T | T | τ | `\tau`
+Υ | `\Upsilon` | υ | `\upsilon`
+Φ | `\Phi` | ϕ | `\phi`
+X | X | χ | `\chi`
+Ψ | `\Psi` | ψ | `\psi`
+Ω | `\v` | ω | `\omega`

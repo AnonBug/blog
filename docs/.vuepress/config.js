@@ -105,6 +105,14 @@ const config = {
     "@vuepress/back-to-top", // 返回到顶部
     "vuepress-plugin-serve", // 本地静态服务器（测试build 结果）
     "vuepress-plugin-table-of-contents", // 目录组件
+    [
+      'vuepress-plugin-mathjax',
+      {
+        macros: {
+          '\\Z': '\\mathbb{Z}',
+        },
+      },
+    ],
   ],
   markdown: {
     lineNumbers: true, // 显示行号
@@ -115,7 +123,7 @@ const config = {
     extendMarkdown: (md) => {
       // 图片中文路径问题 https://segmentfault.com/a/1190000022275001
       md.use(require("markdown-it-disable-url-encode"));
-      md.use(require("markdown-it-katex"));
+      // md.use(require("markdown-it-katex"));
     },
   },
 };
