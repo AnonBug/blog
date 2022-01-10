@@ -7,7 +7,6 @@ sidebar: false
 
 ### 关于本博客
 
-
 本博客主要是面试向，沉淀一些常见问题，按照以下几个维度进行组织：
 
 - [语言基础](/language/)
@@ -23,6 +22,8 @@ sidebar: false
   - 一些前端相关的非算法题，如手写 `Promise`、手写 `apply` 实现等。
 - 一些好玩又涨技能的前端项目
   - [推荐 26 个 GitHub 上好玩又有挑战的前端项目（涵盖初中高阶）](https://juejin.cn/post/6999918705639424014)
+
+- [Mac 使用指南](/others/mac使用指南.md)
 ### 联系我
 
 - [GitHub](https://github.com/AnonBug)
