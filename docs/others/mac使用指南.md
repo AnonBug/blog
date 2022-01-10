@@ -91,7 +91,42 @@ sudo kill -QUIT 24044
 
 在公网环境访问 ip ：`http://121.40.18.171`（需要配置阿里云安全组规则，开发http协议访问）
 
+#### 配置二级目录
+
+目前，网站主页 `www.zhaoyuchun.life` 配置了一个简约的个人主页应用。为了在该域名下配置其他应用，一种方案是使用二级目录，如 `www.zhaoyuchun.life/blog` 访问博客应用。
+
+配置如下：
+
+```nginx
+# nginx.conf 文件
+
+http {
+  server {
+    listen 80;
+    server_name localhost;
+
+    # 主页应用
+    location / {
+      root /root/codes/zhaoyuchun-life;
+      index  index.html index.htm;
+      try_files $uri $uri/ =404;
+    }
+
+    # 配置二级目录
+    location /blog {
+      # 使用 alias 替代 root 配置，最后的 / 不能少
+      alias /root/codes/blog/;
+      try_files $uri $uri/ /blog/index.html;
+    }
+  }
+}
+```
+
+在访问二级目录时，所有资源的请求都以 304 的形式实现。
+
 #### 配置单域名代理多端口
+
+
 
 ### 3.3 文件传输
 
