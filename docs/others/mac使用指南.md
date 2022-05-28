@@ -47,6 +47,12 @@ nvm which 4.2.2
 cat 文件名
 ```
 
+#### 重命名文件或文件夹
+
+```sh
+mv old_dir_name new_dir_name
+```
+
 ### 2.2 vim 编辑器
 
 - 打开文件：`vim 文件名`
@@ -55,6 +61,8 @@ cat 文件名
 - 保存编辑内容：`:w`
 - 退出文件：`:q`
 - 未做更改时的退出：`:q!`
+
+### 
 
 ## 3. 阿里云
 
@@ -126,7 +134,11 @@ http {
 
 #### 配置单域名代理多端口
 
+### 3.3 Git
 
+#### 全局排除 .DS_store 文件
+
+https://0xmachos.com/2020-01-22-Eradicating-.DS_Store-From-Git/
 
 ### 3.3 文件传输
 
