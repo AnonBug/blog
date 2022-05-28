@@ -23,7 +23,9 @@ sidebar: false
 - 一些好玩又涨技能的前端项目
   - [推荐 26 个 GitHub 上好玩又有挑战的前端项目（涵盖初中高阶）](https://juejin.cn/post/6999918705639424014)
 
-- [Mac 使用指南](/others/mac使用指南.md)
+- 其他
+  - [技术好文摘要](/others/技术好文摘要.md)
+  - [Mac 使用指南](/others/mac使用指南.md)
 ### 联系我
 
 - [GitHub](https://github.com/AnonBug)
